@@ -39,3 +39,29 @@ x$setinverse(inv)
 inv                   # returns the inverse of a matrix 'X'
 
 }
+
+##TEsting
+##> f1<-makeCacheMatrix(matrix(1:4,2,2))
+##> f1$get()
+  ##   [,1] [,2]
+##[1,]    1    3
+##[2,]    2    4
+##> cacheSolve(f1)
+  ##   [,1] [,2]
+##[1,]   -2  1.5
+##[2,]    1 -0.5
+##> cacheSolve(f1)
+##getting cached  matrix
+  ##   [,1] [,2]
+##[1,]   -2  1.5
+##[2,]    1 -0.5
+##> data
+  ##   [,1] [,2]
+##[1,]    1    3
+##[2,]    2    4
+##x$get() %*% inv --->Identity matrix(inverse property)
+  ##   [,1] [,2]
+##[1,]    1    0
+##[2,]    0    1
+##> identical(f1$get() %*% inv,inv %*% f1$get())
+##[1] TRUE
